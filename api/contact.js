@@ -3,7 +3,7 @@ import { Resend } from 'resend';
 
 export default async function handler(req, res) {
   // ---- CORS headers ----
-  res.setHeader('Access-Control-Allow-Origin', '*'); // 👈 允許任何來源（開發方便）
+  res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
   if (req.method === 'OPTIONS') return res.status(204).end();
@@ -21,7 +21,7 @@ export default async function handler(req, res) {
 
   try {
     const { name, email, message, _gotcha } = req.body || {};
-    if (_gotcha) return res.status(200).json({ ok: true }); // 蜜罐防 bot
+    if (_gotcha) return res.status(200).json({ ok: true });
 
     if (!name || !email || !message) {
       return res
