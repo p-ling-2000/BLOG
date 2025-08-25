@@ -1,0 +1,11 @@
+{
+  "name": "plants-quiz-contact",
+  "type": "module",
+  "private": true,
+  "dependencies": {
+    "resend": "^3.5.0"
+  },
+  "scripts": {
+    "build": "echo \"Nothing to build\""
+  }
+}

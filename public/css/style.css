@@ -1,0 +1,356 @@
+:root {
+  --gap: 16px;
+  --max: 960px;
+  font-family: 'Trebuchet MS', Arial, Helvetica, sans-serif;
+}
+
+body {
+  width: 100%;
+  margin: 0;
+  font-family: 'Trebuchet MS', Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  background-color: #fbf5dd23;
+}
+.container {
+  max-width: 1200px; /* 中身の最大幅 */
+  margin: 0 auto; /* 左右中央寄せ */
+  padding: 0 120px; /* 左右に余白を足す（可変） */
+}
+
+/* Header */
+header {
+  display: flex;
+  flex-direction: column;
+  max-width: 1200px;
+  height: 150px;
+  margin-bottom: 10px;
+  justify-content: center; /* 中央寄せ */
+  align-items: center; /* 縦位置も中央 */
+}
+header .nb {
+  position: static;
+  left: auto;
+  margin-left: 0;
+  width: 100%;
+  transform: none;
+}
+.header-logo {
+  display: block;
+  width: 200px;
+  height: 70px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative; /* 重ねるための基準箱 */
+}
+.gif-fox {
+  width: auto; /* 縦横比を維持 */
+  height: 50px; /* 固定サイズ */
+  margin: auto;
+  padding-top: 13px;
+  text-align: center;
+  position: relative; /* z-indexを効かせるため */
+  z-index: 2; /* 上 */
+}
+.tulip {
+  width: 70px;
+  height: auto;
+  position: absolute; /* 重ねる */
+  left: 50%;
+  transform: translateX(-50%) translateY(15px);
+  z-index: 1; /* 下 */
+}
+.nb {
+  position: relative;
+  left: 50%; /* 要素の 基準位置を親要素の左端から 50%（真ん中）のところに置く */
+  margin-left: -50vw; /* 画面全幅（viewport 幅）に「引き伸ばし」て左右端まで届かせます */
+  width: 100vw;
+
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+
+  cursor: pointer;
+}
+.nb a {
+  position: relative; /* 「 | 」の基準 */
+  display: inline-block; /* ← 中身を中央寄せするため */
+  justify-content: center;
+  text-align: center;
+  padding: 12px 50px;
+
+  text-decoration: none;
+  letter-spacing: 1px;
+  font-size: 15px;
+  color: #16404d;
+  background-color: transparent;
+  border-radius: 10px;
+
+  transition: 0.3s ease;
+}
+.nb a:hover {
+  font-weight: bolder;
+  background-color: #faf6ed;
+  color: #ff9149;
+
+  border-radius: 50px;
+}
+.nb a::before {
+  content: '|';
+  position: absolute;
+  left: -4px;
+  color: #60b5ff;
+}
+.nb a:last-child::after {
+  content: '|';
+  position: absolute;
+  right: -4px;
+  color: #60b5ff;
+}
+
+/* main */
+main {
+  display: flex;
+  justify-content: space-between; /* 左右に配置 */
+  align-items: flex-start; /* 上端揃え */
+  gap: 40px; /* 横間の余白 */
+}
+.left-contents {
+  flex: 0 0 180px;
+  width: 180px;
+  display: flex;
+  flex-direction: column; /* 縦排列 */
+}
+.about-me {
+  width: 100%;
+  background-color: #faf6ed;
+  border: 2px dashed #afddff;
+  border-radius: 10px;
+  justify-items: center;
+}
+.am1 {
+  margin: 0 auto;
+  text-align: center;
+}
+.am1 h4 {
+  display: inline-block;
+  text-align: center;
+  justify-content: center;
+  margin-top: 30px;
+  margin-bottom: 25px;
+  padding: 7px 25px;
+  color: #fbf5dd;
+  background-color: #60b5ff;
+  border-radius: 10px;
+}
+.am1 img.selfie {
+  width: 135px;
+  height: auto;
+  margin: auto;
+  border-radius: 50%;
+  border: 2px solid #afddff;
+}
+.am1 p {
+  display: inline-block;
+  text-align: center;
+  font-size: 15px;
+  color: #16404d;
+  margin-bottom: 15px;
+  border-bottom: 2px dotted #60b5ff;
+}
+.am2 {
+  width: 135px;
+  margin: auto;
+  text-align: left;
+  margin-bottom: 15px;
+}
+.am2 p {
+  display: inline-block;
+  font-size: 12px;
+  color: #16404d;
+  text-align: left;
+}
+.contact {
+  width: 100%;
+  justify-items: center;
+}
+.email-btn {
+  display: block;
+  width: 100%;
+  box-sizing: border-box; /* ← これ大事（border/padding込みで200pxに収まる） */
+
+  text-align: center;
+  padding: 7px 27px;
+  margin: 25px 0;
+
+  color: #faf6ed;
+  background-color: #60b5ff;
+  border-radius: 10px;
+  border-bottom: 2px solid #16404d86;
+  text-decoration: none;
+  font-weight: bold;
+
+  transition: 0.5s ease;
+  cursor: pointer;
+}
+.email-btn:hover {
+  width: 97%;
+  transform: translateY(1px);
+  background-color: #ff9149;
+  color: #faf6ed;
+  border-bottom: 2px solid #c46b30;
+}
+.right-contents {
+  flex: 1 1 auto;
+  width: 600px;
+  min-width: 0; /* 長いテキストや画像でのはみ出し対策 */
+  margin: 0 30px;
+
+  display: flex; /* 親要素なり */
+  flex-direction: column; /* 縦排列 */
+  align-items: center; /* 横　真ん中 */
+  text-align: center;
+}
+
+.title {
+  width: 100%;
+  padding: 0 5px;
+  background-color: #faf6ed;
+  border-radius: 10px;
+}
+
+.title img {
+  display: block; /* margin: auto　効くため  */
+  width: 80%;
+  height: auto;
+  margin: auto;
+}
+
+.intro {
+  margin-top: 40px;
+  margin-bottom: 10px;
+}
+
+.intro h2 {
+  display: inline-block;
+  color: #16404d;
+  border-bottom: 2px dotted #ff9149;
+  margin-top: 20px;
+}
+.intro p {
+  display: block;
+  text-align: center;
+  margin-top: 10px;
+  font-size: 16px;
+  color: #16404d;
+}
+.btn {
+  width: 30%;
+  color: #16404d;
+  background: #faf6ed;
+
+  font-size: 18px;
+  font-weight: bold;
+
+  outline: none;
+  border: #faf6ed;
+  border-bottom: 2px solid #16404d;
+  border-radius: 10px;
+
+  padding: 10px 0;
+  margin-top: 10px;
+  margin-bottom: 40px;
+  cursor: pointer;
+  transition: 0.5s ease;
+}
+.btn:hover {
+  width: 27%;
+  transform: translateY(1px);
+  border-bottom: 2px solid #ff9149;
+  border-radius: 50px;
+  color: #ff9149;
+}
+
+/* Contact 専用（右側だけに効くようスコープ） */
+.contact-title {
+  margin-top: 10px;
+  margin-bottom: 27px;
+}
+.contact-title h2 {
+  color: #60b5ff;
+  margin-bottom: 0px;
+}
+.slash-underline {
+  position: relative;
+  display: inline-block;
+
+  padding-bottom: 10px;
+  line-height: 1.2;
+}
+.slash-underline::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 8px;
+  border-radius: 3px;
+  background-size: 8px 8px;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='8' height='8'><path d='M0 8 L8 0 H6 L0 6 Z' fill='%23afddff'/></svg>");
+}
+.contact-form {
+  border: 1.5px dashed #afddff;
+  background-color: #faf6ed;
+  border-radius: 10px;
+  padding: 24px 28px;
+}
+.contact-form label {
+  display: block;
+  margin-top: 12px;
+  border-radius: 10px;
+  padding: 8px;
+  transition: 0.7s ease;
+}
+.contact-form label:hover {
+  background-color: #fbf5dd;
+}
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 8px;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  border: 1.5px solid #60b5ff;
+  background-color: white;
+  outline: none;
+}
+.contact-form button {
+  display: inline-block;
+  text-align: center;
+  padding: 12px 33px;
+  margin: 10px 0;
+
+  border: 1px solid #60b5ff;
+  border-bottom: 2px solid #16404d;
+  cursor: pointer;
+
+  background: #60b5ff;
+  color: #fbf5dd;
+  font-weight: bold;
+  border-radius: 50px;
+
+  transition: 0.5s ease;
+}
+.contact-form button:hover {
+  padding: 12px 30px;
+  transform: translateY(1px);
+  background: #ff9149;
+  border-bottom: 2px solid #c46b30;
+  color: #fbf5dd;
+}
+.form-status {
+  margin-top: 8px;
+  color: #16404d;
+  font-size: 14px;
+}

@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>お部屋にぴったりの観葉植物診断</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.png" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="header-logo">
+          <img class="gif-fox" src="5b19d355d154388b45e4a8e3d01b16ae.gif" />
+          <img class="tulip" src="tulip.png" />
+        </div>
+
+        <!-- ナビゲーション バー -->
+        <nav class="nb">
+          <a class="nb1 nb-link" href="#quiz" data-panel="quiz">色々診断</a>
+          <a class="nb2 nb-link" href="#food" data-panel="food"
+            >美味しい食べ物</a
+          >
+          <a class="nb3 nb-link" href="#travel" data-panel="travel">旅行</a>
+          <a class="nb4 nb-link" href="#life" data-panel="life">日本生活</a>
+        </nav>
+      </header>
+
+      <main>
+        <div class="left-contents">
+          <div class="about-me">
+            <div class="am1">
+              <h4>初めまして</h4>
+              <img class="selfie" src="fox.jpg" />
+              <p>HUANG CHEN LING</p>
+            </div>
+            <div class="am2">
+              <p>
+                台湾出身です。<br />國立台北商業大学・創意科技與產品設計系を卒業しました。<br /><br />台湾ではWEBバナー制作に携わり、その後ワーキングホリデーで福岡に来ました。<br /><br />ジュエリー販売や天然石の出品業務を経験し、現在は福岡で暮らしながら、独学でプログラミングを学び、エンジニアを目指しています。
+              </p>
+            </div>
+          </div>
+          <div class="contact">
+            <a href="#contact" class="email-btn nb-link" data-panel="contact"
+              >ご連絡はこちら</a
+            >
+          </div>
+        </div>
+        <div class="right-contents" id="right" aria-live="polite"></div>
+      </main>
+    </div>
+    <script src="js/router.js" defer></script>
+  </body>
+</html>
