@@ -12,9 +12,9 @@ body {
   background-color: #fbf5dd23;
 }
 .container {
-  max-width: 1200px; /* 中身の最大幅 */
-  margin: 0 auto; /* 左右中央寄せ */
-  padding: 0 120px; /* 左右に余白を足す（可変） */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 120px;
 }
 
 /* Header */
@@ -24,8 +24,8 @@ header {
   max-width: 1200px;
   height: 150px;
   margin-bottom: 10px;
-  justify-content: center; /* 中央寄せ */
-  align-items: center; /* 縦位置も中央 */
+  justify-content: center;
+  align-items: center;
 }
 header .nb {
   position: static;
@@ -40,29 +40,29 @@ header .nb {
   height: 70px;
   margin: 0 auto;
   text-align: center;
-  position: relative; /* 重ねるための基準箱 */
+  position: relative;
 }
 .gif-fox {
-  width: auto; /* 縦横比を維持 */
-  height: 50px; /* 固定サイズ */
+  width: auto;
+  height: 50px;
   margin: auto;
   padding-top: 13px;
   text-align: center;
-  position: relative; /* z-indexを効かせるため */
-  z-index: 2; /* 上 */
+  position: relative;
+  z-index: 2; 
 }
 .tulip {
   width: 70px;
   height: auto;
-  position: absolute; /* 重ねる */
+  position: absolute;
   left: 50%;
   transform: translateX(-50%) translateY(15px);
-  z-index: 1; /* 下 */
+  z-index: 1;
 }
 .nb {
   position: relative;
-  left: 50%; /* 要素の 基準位置を親要素の左端から 50%（真ん中）のところに置く */
-  margin-left: -50vw; /* 画面全幅（viewport 幅）に「引き伸ばし」て左右端まで届かせます */
+  left: 50%; 
+  margin-left: -50vw;
   width: 100vw;
 
   display: flex;
@@ -72,8 +72,8 @@ header .nb {
   cursor: pointer;
 }
 .nb a {
-  position: relative; /* 「 | 」の基準 */
-  display: inline-block; /* ← 中身を中央寄せするため */
+  position: relative; 
+  display: inline-block; 
   justify-content: center;
   text-align: center;
   padding: 12px 50px;
@@ -110,15 +110,15 @@ header .nb {
 /* main */
 main {
   display: flex;
-  justify-content: space-between; /* 左右に配置 */
-  align-items: flex-start; /* 上端揃え */
-  gap: 40px; /* 横間の余白 */
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px; 
 }
 .left-contents {
   flex: 0 0 180px;
   width: 180px;
   display: flex;
-  flex-direction: column; /* 縦排列 */
+  flex-direction: column; 
 }
 .about-me {
   width: 100%;
@@ -176,7 +176,7 @@ main {
 .email-btn {
   display: block;
   width: 100%;
-  box-sizing: border-box; /* ← これ大事（border/padding込みで200pxに収まる） */
+  box-sizing: border-box; 
 
   text-align: center;
   padding: 7px 27px;
@@ -202,12 +202,12 @@ main {
 .right-contents {
   flex: 1 1 auto;
   width: 600px;
-  min-width: 0; /* 長いテキストや画像でのはみ出し対策 */
+  min-width: 0;
   margin: 0 30px;
 
-  display: flex; /* 親要素なり */
-  flex-direction: column; /* 縦排列 */
-  align-items: center; /* 横　真ん中 */
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
   text-align: center;
 }
 
@@ -310,7 +310,7 @@ main {
   padding: 8px;
   transition: 0.7s ease;
 }
-.contact-form label:hover {
+.contact-form label :hover {
   background-color: #fbf5dd;
 }
 .contact-form input,
