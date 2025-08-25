@@ -1,25 +1,18 @@
 // /public/js/router.js
-// ---- API BASE 自動偵測 ----
-// 規則：
-// 1) 若同網域有 /api/ping → 用同網域（Vercel 全端部署時）
-// 2) 若在本機，但前端是靜態檔 → 試 http://localhost:3000
-// 3) 否則 → 用你提供的正式 API 網域（請改成你的 vercel 網域）
 const FALLBACK_PROD_API =
   'https://blog-hv22enazx-p-ling-2000s-projects.vercel.app';
 
 let API_BASE = ''; // '' 代表同網域（會用相對路徑 /api/...）
 
 async function detectApiBase() {
-  // 嘗試同網域
   try {
     const r = await fetch('/api/ping', { method: 'GET', cache: 'no-store' });
     if (r.ok) {
-      API_BASE = ''; // 同網域可用
+      API_BASE = '';
       return;
     }
   } catch (_) {}
 
-  // 嘗試本機 Vercel dev（給本機用 GitHub Pages 或 file:// 測試時）
   if (location.hostname !== 'localhost') {
     try {
       const r = await fetch('http://localhost:3000/api/ping', {
@@ -33,7 +26,6 @@ async function detectApiBase() {
     } catch (_) {}
   }
 
-  // 最後用正式 Vercel 網域
   API_BASE = FALLBACK_PROD_API;
 }
 
@@ -48,7 +40,6 @@ document.addEventListener('DOMContentLoaded', async () => {
   const initial = getPanelFromURL() || 'quiz';
   load(initial, false).then(() => setActive(initial));
 
-  // 側邊導覽的點擊（data-panel）
   document.addEventListener('click', async (e) => {
     const link = e.target.closest('[data-panel]');
     if (!link) return;
@@ -59,7 +50,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     setActive(panel);
   });
 
-  // 返回/前進維持同步
   window.addEventListener('popstate', () => {
     const panel = getPanelFromURL() || 'quiz';
     load(panel, false).then(() => setActive(panel));
@@ -71,7 +61,6 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   async function load(panel, push) {
     try {
-      // ⚠️ 用「相對路徑」：確保在 GitHub Pages 的子路徑也能抓到
       const res = await fetch(`partials/${panel}.html`, { cache: 'no-cache' });
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       const html = await res.text();
