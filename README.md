@@ -45,6 +45,10 @@ SNS や Medium の発信を、自分らしいデザインでひとつにまと�
 - **連絡フォーム**：Resend と連携し、送信内容をメールで受信できるようにしています。  
 - **ホスティング**：Vercel にデプロイし、SSL で公開しています。
 
+https://github.com/user-attachments/assets/c6400190-d566-40bf-9bb8-cd73c0f407cf
+
+
+
 ---
 
 ## 使用技術
