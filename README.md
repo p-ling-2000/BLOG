@@ -12,7 +12,7 @@ https://blog-chi-livid-15.vercel.app/
 
 ## 概要
 
-※このサイトは**個人の練習作品**として制作・公開しています。
+※このサイトは個人の練習作品として制作・公開しています。
 
 - **実装していること**  
   文章・写真の掲載。  
@@ -51,7 +51,7 @@ SNS や Medium の発信を、自分らしいデザインでひとつにまと�
 
 | Category | Technology Stack / Version |
 |---|---|
-| Frontend | HTML5 / CSS3 / JavaScript |
+| Frontend | HTML / CSS / JavaScript |
 | Routing | Hash Router |
 | Form / API | Fetch API, Resend |
 | Backend | Vercel Serverless Functions |
