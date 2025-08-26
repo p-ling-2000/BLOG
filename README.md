@@ -5,7 +5,7 @@
 
 ## サービスのURL
 
-公開中：  
+準備ができ次第、こちらからお試しいただけます：  
 https://blog-chi-livid-15.vercel.app/
 
 ---
