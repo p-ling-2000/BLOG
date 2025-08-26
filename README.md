@@ -5,7 +5,6 @@
 
 ## 公開URL
 
-準備ができ次第、ここに掲載します。
 https://blog-chi-livid-15.vercel.app/
 
 ---
