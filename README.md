@@ -46,9 +46,7 @@ SNS や Medium の発信を、自分らしいデザインでひとつにまと�
 - **ホスティング**：Vercel にデプロイし、SSL で公開しています。
 
 
-https://github.com/user-attachments/assets/d906370b-fbe4-46a3-83f4-2fdb5a9757a8
-
-
+https://github.com/user-attachments/assets/c84f49b5-1fa2-44ac-9a2b-ae53cff3dec9
 
 
 
