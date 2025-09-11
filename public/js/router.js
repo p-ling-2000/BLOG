@@ -1,11 +1,8 @@
-<<<<<<< HEAD
 // /public/js/router.js
-=======
 /* eslint-disable no-unused-vars, no-empty */
 // ファイル全体に適用
 
 // ---- API BASE 自動偵測 ----
->>>>>>> 3df713b (Fix styles and HTML updates)
 const FALLBACK_PROD_API =
   'https://blog-hv22enazx-p-ling-2000s-projects.vercel.app'; //備用的 Vercel正式 API 網址（固定不變）
 
@@ -13,27 +10,17 @@ let API_BASE = ''; // 根據執行環境（同網域 / localhost / 正式伺服�
 
 // ---- 不同步處理: 確保使用者不管用什麼網域都能使用api ----
 async function detectApiBase() {
-<<<<<<< HEAD
-=======
   // 1. 當來自不同網域時，使瀏覽器拿到cors許可，進一步拿取api。
->>>>>>> 3df713b (Fix styles and HTML updates)
   try {
     const r = await fetch('/api/ping', { method: 'GET', cache: 'no-store' }); //await fetch：等待請求回應。
     if (r.ok) {
-<<<<<<< HEAD
-=======
       // 如果 r.ok 有收到回傳的布林值 true 代表許可同意。
-
->>>>>>> 3df713b (Fix styles and HTML updates)
       API_BASE = '';
       return;
     }
   } catch (_) {} //catch:捕捉錯誤 = 如果沒抓到，就什麼都不做
 
-<<<<<<< HEAD
-=======
   // 2. 當來自不是localhost的網域時（例如 GitHub Pages 或 file://），嘗試用本機用 Vercel dev 部屬出 localhost:3000。
->>>>>>> 3df713b (Fix styles and HTML updates)
   if (location.hostname !== 'localhost') {
     try {
       const r = await fetch('http://localhost:3000/api/ping', {
@@ -47,10 +34,7 @@ async function detectApiBase() {
     } catch (_) {}
   }
 
-<<<<<<< HEAD
-=======
   // 3. 前面兩個方式都失敗，使用正式 Vercel 網域
->>>>>>> 3df713b (Fix styles and HTML updates)
   API_BASE = FALLBACK_PROD_API;
 }
 
@@ -82,15 +66,12 @@ document.addEventListener('DOMContentLoaded', async () => {
   //如果網址沒有 hash → 會回 null。
   // || 'quiz'：如果是 null，就用 'quiz' 當預設值 → 所以 initial 代表「第一次載入要顯示哪個 panel」，預設是 'quiz'。
 
-<<<<<<< HEAD
-=======
   //load(initial, false)：載入一開始要顯示的 panel（例如 quiz）
   //false：代表這次不需要改變瀏覽器的歷史紀錄（因為是初始畫面）。
   //.then(() => setActive(initial))：等 load() 完成後，呼叫 setActive(initial)，把對應的導覽選單（nb-link）加上 active 樣式，顯示「這個項目目前被選中」。
   //範例：<a class="nb1 nb-link active" href="#quiz" data-panel="quiz">色々診断</a>
 
   // ---- 註冊：監聽在導覽列，點擊了哪個項目 ----
->>>>>>> 3df713b (Fix styles and HTML updates)
   document.addEventListener('click', async (e) => {
     //e 是事件物件，包含了點擊發生的細節（點到誰、滑鼠座標、按下什麼鍵…）。
 
@@ -118,10 +99,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     //把剛剛點擊的項目加上 .active 樣式，讓選單顯示「目前在哪個頁面」。
   });
 
-<<<<<<< HEAD
-=======
   // ---- 註冊：監聽返回鍵 ----
->>>>>>> 3df713b (Fix styles and HTML updates)
   window.addEventListener('popstate', () => {
     //popstate：當使用者點「返回鍵」或「前進鍵」時觸發。
     //在前面用過 load(panel, true) 所以有了 history.pushState() → 記錄頁面狀態。
