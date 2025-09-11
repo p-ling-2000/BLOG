@@ -21,3 +21,25 @@
 
   <p class="form-status" aria-live="polite"></p>
 </form>
+
+<!-- 表單驗證 API：當你在表單裡使用 HTML 屬性（例如 required、type="email"、minlength）時，瀏覽器會自動檢查輸入是否正確。 -->
+<!-- 驗證 API 可以讓 JS 操作和客製化 這些驗證的功能。 -->
+<!--  JavaScript 的驗證 API 方法 -->
+<!--  (a) 屬性：validity -->
+<!--  el.validity.valid → 是否完全有效 -->
+<!--  el.validity.valueMissing → 是否缺少必填值 -->
+<!--  el.validity.typeMismatch → 格式不符（例如 email 格式錯誤） -->
+<!--  el.validity.tooShort / tooLong → 長度不對 -->
+<!--  el.validity.rangeUnderflow / rangeOverflow → 數值超出範圍 -->
+
+<!--  (b) 方法：checkValidity() -->
+<!--  呼叫 form.checkValidity() → 檢查整個表單是否通過。 -->
+<!--  呼叫 input.checkValidity() → 檢查單一欄位。 -->
+
+<!--  (c) 方法：reportValidity() -->
+<!--  跟 checkValidity() 類似，但會順便顯示錯誤訊息在畫面上。 -->
+
+<!--  (d) 方法：setCustomValidity(message) -->
+<!--  設定自訂錯誤提醒訊息。 -->
+<!--  例如：emailInput.setCustomValidity("請輸入正確的 Email 地址"); -->
+<!--  如果設成空字串 '' → 清除上一個錯誤提醒訊息。 -->

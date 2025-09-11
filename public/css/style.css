@@ -15,6 +15,11 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 120px;
+
+  max-width: 1200px; /* 中身の最大幅 */
+  margin: 0 auto; /* 左右中央寄せ */
+  padding: 0 120px; /* 左右に余白を足す（可変） */
+  box-sizing: border-box;
 }
 
 /* Header */
@@ -49,7 +54,7 @@ header .nb {
   padding-top: 13px;
   text-align: center;
   position: relative;
-  z-index: 2; 
+  z-index: 2;
 }
 .tulip {
   width: 70px;
@@ -61,7 +66,7 @@ header .nb {
 }
 .nb {
   position: relative;
-  left: 50%; 
+  left: 50%;
   margin-left: -50vw;
   width: 100vw;
 
@@ -72,8 +77,8 @@ header .nb {
   cursor: pointer;
 }
 .nb a {
-  position: relative; 
-  display: inline-block; 
+  position: relative;
+  display: inline-block;
   justify-content: center;
   text-align: center;
   padding: 12px 50px;
@@ -110,15 +115,20 @@ header .nb {
 /* main */
 main {
   display: flex;
+
   justify-content: space-between;
   align-items: flex-start;
-  gap: 40px; 
+  gap: 40px;
+
+  justify-content: space-between; /* 左右に配置 */
+  align-items: flex-start; /* 上端揃え */
+  gap: 20px; /* 横間の余白 */
 }
 .left-contents {
   flex: 0 0 180px;
   width: 180px;
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
 }
 .about-me {
   width: 100%;
@@ -169,6 +179,9 @@ main {
   color: #16404d;
   text-align: left;
 }
+.am3 {
+  display: none;
+}
 .contact {
   width: 100%;
   justify-items: center;
@@ -176,7 +189,7 @@ main {
 .email-btn {
   display: block;
   width: 100%;
-  box-sizing: border-box; 
+  box-sizing: border-box;
 
   text-align: center;
   padding: 7px 27px;
@@ -205,9 +218,13 @@ main {
   min-width: 0;
   margin: 0 30px;
 
-  display: flex; 
-  flex-direction: column; 
-  align-items: center; 
+  flex: 0 0 700px; /* 固定右欄（1200 - padding*2 - 左欄） */
+  width: 700px;
+  min-width: 0; /* 長いテキストや画像でのはみ出し対策 */
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
 }
 
@@ -353,4 +370,184 @@ main {
   margin-top: 8px;
   color: #16404d;
   font-size: 14px;
+}
+
+/* 1024px 版型 */
+@media screen and (max-width: 1024px) {
+  .container {
+    max-width: 1024px;
+    padding: 0 40px; /* 左右縮小 padding */
+    box-sizing: border-box;
+  }
+  header {
+    transform: scale(1.5);
+    transform-origin: top center;
+
+    height: 150px;
+    margin-bottom: 100px;
+  }
+  .nb a {
+    padding: 12px 20px;
+  }
+  main {
+    max-width: 1024px;
+    flex-direction: column; /* 改成上下排 */
+    justify-content: center; /* 子元素水平置中 */
+  }
+  .right-contents {
+    order: 1;
+    flex: 0 0 800px;
+    width: 800px;
+    min-width: 0; /* 長いテキストや画像でのはみ出し対策 */
+    display: flex; /* 親要素なり */
+    flex-direction: column; /* 縦排列 */
+    align-items: center; /* 横　真ん中 */
+    text-align: center;
+    margin: 0 auto; /* 左右自動分配空間 */
+  }
+
+  .title {
+    width: 100%;
+    padding: 0 5px;
+    background-color: #faf6ed;
+    border-radius: 10px;
+  }
+
+  .title img {
+    display: block; /* margin: auto　効くため  */
+    width: 80%;
+    height: auto;
+    margin: auto;
+  }
+
+  .intro {
+    margin-top: 40px;
+    margin-bottom: 10px;
+  }
+
+  .intro h2 {
+    display: inline-block;
+    color: #16404d;
+    border-bottom: 2px dotted #ff9149;
+    margin-top: 20px;
+    font-size: 28px;
+  }
+  .btn {
+    margin-bottom: 100px;
+  }
+  .left-contents {
+    order: 2;
+    flex: 0 0 650px;
+    width: 650px;
+    height: 50px;
+    margin: 0 auto; /* 左右自動分配空間 */
+    display: flex;
+    align-items: center;
+  }
+
+  .about-me {
+    width: 100%;
+    display: flex;
+    justify-content: space-between; /* 左右に配置 */
+    align-items: flex-start; /* 上端揃え */
+  }
+  .am1 h4 {
+    display: none;
+  }
+  .am1 {
+    flex: 0 0 150px;
+    width: 150px;
+    display: flex;
+    flex-direction: column; /* 縦排列 */
+    margin-left: 35px;
+    margin-top: 25px;
+    margin-bottom: 10px;
+  }
+
+  .am1 img.selfie {
+    width: 135px;
+    height: auto;
+    margin: auto;
+    border-radius: 50%;
+    border: 2px solid #afddff;
+  }
+  .am1 p {
+    display: inline-block;
+    text-align: center;
+    font-size: 15px;
+    color: #16404d;
+    border-bottom: 2px dotted #60b5ff;
+  }
+  .am2 {
+    display: none;
+  }
+  .am3 {
+    flex: 0 0 400px;
+    width: 400px;
+    display: flex;
+    flex-direction: column; /* 縦排列 */
+    text-align: left;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    margin-left: 0;
+    margin-right: 30px;
+  }
+  .am3 h4 {
+    width: 80px;
+    display: inline-block;
+    text-align: left;
+    justify-content: center;
+    padding: 2px 0;
+    margin: 5px 0;
+    color: #60b5ff;
+    border-bottom: 1px solid #60b5ff;
+  }
+  .am3 p {
+    display: inline-block;
+    font-size: 12px;
+    color: #16404d;
+    text-align: left;
+    padding: 0;
+    margin-bottom: 10px;
+  }
+  .contact {
+    width: 100%;
+    justify-items: center;
+  }
+  .email-btn {
+    display: block;
+    width: 100%;
+    box-sizing: border-box; /* ← これ大事（border/padding込みで200pxに収まる） */
+
+    text-align: center;
+    padding: 10px 27px;
+    margin: 25px 0;
+
+    color: #faf6ed;
+    background-color: #60b5ff;
+    border-radius: 10px;
+    border-bottom: 2px solid #16404d86;
+    text-decoration: none;
+    font-weight: bold;
+
+    transition: 0.5s ease;
+    cursor: pointer;
+  }
+}
+/* 700px 版型 */
+@media screen and (max-width: 700px) {
+  main {
+    flex-direction: column; /* 左右改上下 */
+    gap: 20px;
+  }
+
+  .left-contents,
+  .right-contents {
+    width: 100%; /* 都全寬 */
+    flex: none;
+  }
+
+  .container {
+    padding: 0 16px; /* 手機縮小內距 */
+  }
 }
