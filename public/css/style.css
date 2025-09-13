@@ -247,11 +247,13 @@ main {
   margin-bottom: 10px;
 }
 
-.intro h2 {
+.intro h1 {
   display: inline-block;
   color: #16404d;
   border-bottom: 2px dotted #ff9149;
   margin-top: 20px;
+  font-size: 27px;
+
 }
 .intro p {
   display: block;
@@ -425,7 +427,7 @@ main {
     margin-bottom: 10px;
   }
 
-  .intro h2 {
+  .intro h1 {
     display: inline-block;
     color: #16404d;
     border-bottom: 2px dotted #ff9149;
